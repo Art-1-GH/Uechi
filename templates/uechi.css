@@ -1,55 +1,164 @@
-<style type="text/css">
-<!--
+﻿/* Grundlayout */
 body {
-	background-color : #ffffff;
-	margin:0px;
-	padding:0px;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
 }
 
-p, table {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	font-weight: normal;
+/* Tabellen-Layout stabilisieren */
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
+td {
+    vertical-align: top;
+}
 
+/* Kopfbereich */
 td.title {
-	height: 90px;
-	width: 600px;
-	text-align: center;
-	vertical-align: top;
-	padding-left: 10px;
+    height: 90px;
+    width: 600px;
+    text-align: center;
+    vertical-align: top;
+    padding-left: 10px;
 
-	color: #000000;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 36px;
-	font-weight: bold;
+    color: #000000;
+    font-size: 36px;
+    font-weight: bold;
 }
 
-
-a:link{
-	color: #001179;
-	font-weight: bold;
-	text-decoration: underline;
+/* Navigation */
+h3 {
+    margin-top: 0;
 }
 
-a:visited{
-	color: #366666;
-	font-weight: bold;
-	text-decoration: underline;
+a:link {
+    color: #001179;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
-
-h1{
-	font-size: 18px;
-	font-weight: bold;
+a:visited {
+    color: #366666;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
+/* Ãœberschriften */
+h1 {
+    font-size: 24px;      /* vorher 18px + font size="+4" â†’ stabilisiert */
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Absatzformatierung */
+p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/* Listen */
 ul {
-	margin-left: 25px;
-	margin-right: 30px;
+    margin-left: 25px;
+    margin-right: 30px;
 }
 
+/* Zentrierte Bilder */
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+/* Kleine SchriftgrÃ¶ÃŸen */
+.small {
+    font-size: 11px;
+}
 
--->
+/* GroÃŸe SchriftgrÃ¶ÃŸen */
+.big {
+    font-size: 20px;
+}
+
+/* Navigation â€“ aktiver MenÃ¼punkt */
+.nav-active {
+    color: #001179;
+    font-weight: bold;
+}
+
+/* Abstandshalter fÃ¼r alte Layout-Tricks */
+.spacer {
+    height: 10px;
+    display: block;
+}
+
+/* --------------------------------------------- */
+/* MOBILE VERSION – Option A (nur CSS)           */
+/* --------------------------------------------- */
+
+@media screen and (max-width: 800px) {
+
+    /* Gesamte Seite etwas einrücken */
+    body {
+        padding: 10px;
+    }
+
+    /* Tabellenlayout etwas flexibler machen */
+    table {
+        width: 100%;
+    }
+
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    /* Navigation links soll nicht 130px breit bleiben */
+    td[background*="bg-links.jpg"],
+    td[background*="bg-links-oben.jpg"] {
+        width: 100%;
+        background-size: cover;
+    }
+
+    /* Überschriften etwas kleiner */
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* Bilder automatisch verkleinern */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Headline-Bild zentrieren */
+    td.title img {
+        display: block;
+        margin: 0 auto;
+        max-width: 90%;
+    }
+
+    /* Logo rechts (uechi-ryu.gif) unter den Inhalt schieben */
+    td[background*="bg-oben3.jpg"] {
+        display: none; /* Retro-Look bleibt, aber mobil sinnvoll */
+    }
+
+    /* Textblöcke angenehmer lesbar */
+    p {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    /* Navigation-Links größer für Touch */
+    td a {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 6px;
+    }
+}
+
